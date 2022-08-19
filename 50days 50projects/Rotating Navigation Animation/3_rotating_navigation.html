@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
+     <title>Rotating Navigation Animation</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    body{
+        background-color: rgb(18 110 89)!important; 
+        margin: 0;
+        overflow-x: hidden;
+        background-color:#333;
+        color: #222;
+
+    }
+    h1{
+        font-family: 'Saira Condensed', sans-serif;
+    }
+    h2{
+        color: black;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    h5{
+        color: black;
+        position: absolute;
+        right: 10px;
+        top: 30px;
+
+    }
+    .container {
+  background-color: #fafafa;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.circle {
+  background-color: #327474;
+  border: 2px solid white;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  color: #fff;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+ 
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 30px;
+  font-family: 'Saira Condensed', sans-serif;;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+}
+
+nav ul li i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+
+.container.show-nav + nav li{
+    transform:translateX(0);
+    transition: tranform 0.4s ease;
+}
+
+.container small{
+    font-style: italic;
+    font-weight: bold;
+}
+</style>
+<body>
+   
+  <div class="container">
+    <h2>Niki</h2>
+    <h5>12.10.2021</h5>
+      <div class="circle-container">
+          <div class="circle">
+              <button id="close">
+                <i class="fas fa-times"></i>
+              </button>
+              <button id="open">
+                <i class="fas fa-bars"></i>
+              </button>
+          </div>
+      </div>
+
+      <div class="container">
+          <h1>Header (1)</h1>
+          <small>Aztec</small>
+
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quasi aperiam quidem, error sed adipisci dolores at magnam harum, qui assumenda vitae a! Libero iste placeat dignissimos, tempora labore deleniti animi saepe, magni provident vel totam, natus cupiditate quae necessitatibus accusamus laboriosam culpa eaque. Consequuntur voluptatem voluptatibus aspernatur autem eligendi velit soluta iure. Non ab quaerat, autem aliquam rem voluptate facilis temporibus placeat quam tenetur libero ratione ex culpa vel, harum ullam quod saepe itaque odit fuga eius accusamus? Magnam aspernatur asperiores itaque at eligendi illum accusamus corporis amet, cumque inventore adipisci explicabo officia, totam vel culpa nulla recusandae ipsam.</p>
+
+          <h1>Header (2)</h1>
+          <small>Aztec</small>
+
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quasi aperiam quidem, error sed adipisci dolores at magnam harum, qui assumenda vitae a! Libero iste placeat dignissimos, tempora labore deleniti animi saepe, magni provident vel totam, natus cupiditate quae necessitatibus accusamus laboriosam culpa eaque. Consequuntur voluptatem voluptatibus aspernatur autem eligendi velit soluta iure. Non ab quaerat, autem aliquam rem voluptate facilis temporibus placeat quam tenetur libero ratione ex culpa vel, harum ullam quod saepe itaque odit fuga eius accusamus? Magnam aspernatur asperiores itaque at eligendi illum accusamus corporis amet, cumque inventore adipisci explicabo officia, totam vel culpa nulla recusandae ipsam.</p>
+      </div>
+  </div>
+  <nav>
+      <ul>
+          <li><i class="fas fa-home"></i>Home</li>
+          <li><i class="fas fa-user-alt"></i>About</li>
+          <li><i class="fas fa-envelope"></i>Contact</li>
+
+
+      </ul>
+  </nav>
+</body>
+<script>
+
+const open = document.getElementById('open')
+const close = document.getElementById('close')
+const container = document.querySelector('.container')
+
+open.addEventListener('click', () => container.classList.add('show-nav'))
+
+close.addEventListener('click', () => container.classList.remove('show-nav'))
+
+    
+
+
+</script>
+</html>

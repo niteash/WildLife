@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <title>soundboard</title>
+</head>
+<style>
+
+    *{
+        box-sizing: border-box;
+    }
+
+    h1{
+        top: 10px;
+        position: absolute;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        color: rgb(80, 80, 80);
+    }
+
+    body{
+        background-color: #f3cf7a;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+       flex-wrap: wrap;
+        min-height: 100vh;
+        overflow: hidden;
+        text-align: center;
+
+
+    }
+
+    .btn{
+        font-family: 'Varela Round', sans-serif;
+        box-shadow: rgba(33, 33, 34, 0.2) 0px 7px 29px 0px;
+        background-color:#feb062;
+        border: none;
+        border-radius: 5px;
+        color: rgb(80, 80, 80);
+        margin: 1rem;
+        padding: 1.5rem 3rem;
+        font-size: 13px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .btn:focus{
+        outline: 0;
+
+    }
+
+    .btn:hover{
+        opacity: 0.6;      
+    }
+</style>
+<body>
+    <h1>Project(9) SoundBoard</h1>
+
+    <audio src="./sounds/Main Kaun Hoon - Unplugged ! Meghna Mishra.mp3" id="MainKaunHoon"></audio>
+    <audio src="./sounds/Squid Game Red Light Green Light Ringtone.mp3" id="RedLightGreenLight"></audio>
+    <audio src="./sounds/Tere Hi Khyaalo Mai Dooba Raha - Hindi Song.mp3" id="TereHi"></audio>
+    <audio src="./sounds/Teri Hi Boli Bolungi Mai - Secret Superstar.mp3" id="SecretSuperstar"></audio>
+    <audio src="./sounds/The Squid Game Ringtone.mp3" id="SquidGameTone"></audio>
+    <audio src="./sounds/The Squid Game Theme Ringtone.mp3" id="SquidGameTheme"></audio>
+
+
+    <div id="buttons"></div>
+    
+</body>
+<script src="soundboard.js"></script>
+</html>

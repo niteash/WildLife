@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Animation</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+
+    }
+
+    body{
+        background-color: rgb(131, 35, 118);
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+       flex-direction: column;
+       display: flex;
+       min-height: 100vh;
+       overflow-x: hidden;
+    }
+
+    .box{
+        border: 3px solid rgb(255, 255, 255);
+        border-radius: 9px;
+        width: 300px;
+        overflow: hidden;
+        height: 300px;
+        background-color: rgb(95, 25, 86);
+        margin: 10px;
+        transform: translateX(600%);
+        transition: transform 0.5s ease;
+        
+
+    }
+
+    .box:nth-of-type(even){
+
+        transform: translateX(-400%);
+
+}
+
+    .box.show{
+        transform: translateX(0);
+    }
+
+    h2{
+        color: rgb(230, 228, 228);
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+</style>
+<body>
+    <div class="box">
+        <img src="./img/img01.jpg" alt="" style="width: 300px;">
+        <h2>Card(1)</h2>
+    </div>
+
+    <div class="box">
+        <img src="./img/img02.jpg" alt="" style="width: 300px;">
+        <h2>Card(2)</h2>
+    </div>
+
+    <div class="box">
+        <img src="./img/img03.jpg" alt="" style="width: 300px;">
+        <h2>Card(3)</h2>
+    </div>
+
+    <div class="box">
+        <img src="./img/img04.jpg" alt="" style="width: 300px;">
+        <h2>Card(4)</h2>
+    </div>
+
+    <div class="box">
+        <img src="./img/img05.jpg" alt="" style="width: 300px;">
+        <h2>Card(5)</h2>
+    </div>
+
+    <div class="box">
+        <img src="./img/niki.jpg" alt="" style="width: 295px; height: 220px;">
+        <h2>Card(6)</h2>
+    </div>
+
+    <div class="box">
+        <img src="./img/dress1.jfif" alt="" style="width: 295px; height: 220px;">
+        <h2>Card(7)</h2>
+    </div>
+
+    <div class="box">
+        <img src="./img/desktop.png" alt="" style="width: 300px;">
+        <h2>Card(8)</h2>
+    </div>
+</body>
+<script>
+
+    const boxes = document.querySelectorAll('.box');
+
+    window.addEventListener('scroll', scrolling);
+
+    function scrolling(){
+        const triggerBottom = window.innerHeight *(4/5);
+        boxes.forEach(box => {
+            const boxTop = box.getBoundingClientRect().top  
+            if(triggerBottom > boxTop){
+                box.classList.add('show');
+            }else{
+                box.classList.remove('show');
+            }
+        })
+    }
+
+</script>
+</html>

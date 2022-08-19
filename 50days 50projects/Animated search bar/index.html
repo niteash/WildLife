@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
+    <title>Animated Search Bar</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+
+    }
+
+    body{
+        margin: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        overflow: hidden;
+        background: linear-gradient(to right, #1d976c, #93f9b9);
+    }
+    h2{
+        color: black;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    h5{
+        color: black;
+        position: absolute;
+        right: 10px;
+        top: 30px;
+
+    }
+
+    .search{
+        position: relative;
+        height: 50px;
+
+    }
+    
+    .search .input{
+        background-color: black;
+        color: white;
+        border: 0;
+        padding: 10px;
+        height: 50px;
+        width: 50px;
+        font-size: 18px;
+        transition: width 0.3s ease;
+    }
+
+    .search .btn{
+        color: white;
+        border: 0;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 50px;
+        width: 50px;
+        font-size: 20px;
+        transition: transform 0.3s ease;
+
+    }
+
+    .search.active .btn{
+        transform: translateX(200px);
+        border-radius: 8px;
+    }
+    .search.active .input{
+       width: 230px;
+       border-radius: 8px;
+
+       
+    }
+
+    .search .input:focus, .search .btn:focus{
+        outline: 0;
+    }
+</style>
+<body>  
+       <h2>Niki</h2>
+    <h5>13.10.2021</h5>
+    <div class="search">
+        <input type="text" class="input" placeholder="Search">
+        <button class="btn">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+    
+</body>
+<script>
+
+    const button = document.querySelector('.btn');
+    const input = document.querySelector('.input');
+    const search = document.querySelector('.search');
+
+    button.addEventListener('click', () => {
+        search.classList.toggle('active');
+        input.focus()
+    })
+
+
+    
+
+</script>
+</html>
