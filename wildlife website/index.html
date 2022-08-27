@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      user-select: none;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      scroll-behavior: smooth;
+      height: 600px;
+    }
+
+    .mainpic {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+    h1 {
+      position: relative;
+      top: 10px;
+      left: 5px;
+      color: white;
+      font-size: 20px;
+      display: inline;
+    }
+    nav {
+      margin: 0;
+      display: inline;
+      float: right;
+      position: relative;
+      top: 5px;
+      right: 5px;
+    }
+    nav a:hover{
+      background-color: #595e38;
+    }
+
+    a {
+      background-color: black;
+      position: relative;
+      top: 10px;
+      margin: 0;
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      padding: 10px;
+    }
+    .container1 {
+    
+      height: 50px;
+      background-color:#7a804d;
+    }
+    .container2 {
+      height: 650px;
+      width: 100%;
+      background-color: #f3f2f2;
+    }
+    .box {
+      list-style: none;
+      position: absolute;
+      margin: 30px;
+      display: list-item;
+    }
+    .para {
+      width: 300px;
+      line-height: 27px;
+      position: relative;
+      left: 20px;
+      top: 20px;
+    }
+
+    .short-title {
+      display: inline-block;
+      margin: 20px;
+    }
+    svg {
+      position: absolute;
+    }
+    h4 {
+      position: relative;
+      left: 20px;
+      top: 4px;
+      font-size: 20px;
+      font-weight: lighter;
+    }
+    .long-title {
+      position: relative;
+      left: 20px;
+      color: #7a804d;
+    }
+    .btn {
+      padding: 20px;
+      border: none;
+      background-color: #7a804d;
+      color: white;
+      position: relative;
+      top: 40px;
+      left: 18px;
+    }
+
+    .deer {
+      width: 400px;
+      height: 600px;
+      right: 10px;
+      top: 20px;
+      position: relative;
+      float: right;
+      display: block;
+    }
+
+    .gallery {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      top: 320px;
+      left: 360px;
+    }
+    .pics {
+      margin: 20px;
+    }
+
+    .text_container {
+      display: block;
+      position: relative;
+      width: 100%;
+    }
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      transition: 0.5s ease;
+      background-color: rgb(29, 29, 29);
+    }
+    .text_container:hover .overlay {
+      opacity: 0.8;
+    }
+    .text {
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .d_container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 100%;
+      height: 100%;
+      background-color: #f3f2f2;
+    }
+    .donation_title {
+      display: block;
+    }
+    .img_box {
+      transition: 0.5s ease-in-out;
+      box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+      overflow: hidden;
+      width: 260px;
+      height: 260px;
+      margin: 20px;
+      position: relative;
+      top: 200px;
+    }
+    .img_box:hover {
+      
+      width: 265px;
+      height: 265px;
+      border-radius: 20px;
+    }
+    .d_img {
+      width: 100%;
+      height: 100%;
+    }
+    .donation_title {
+      position: absolute;
+      margin: 20px;
+      font-size: 30px;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    }
+    .foot_container {
+      width: 100%;
+      height: 100%;
+      background-color: #7a804d;
+      padding: 50px;
+    }
+
+    .sub_btn {
+      border: none;
+      margin: 5px;
+      padding: 10px;
+      background-color: black;
+      color: white;
+      font-size: 13px;
+    }
+    .sub_btn:hover {
+      background-color: rgb(43, 43, 43);
+    }
+    .email {
+      outline: none;
+      border: none;
+      padding: 10px;
+      background-color: black;
+      color: white;
+    }
+    .email:hover {  
+      background-color: rgb(43, 43, 43);
+    }
+
+  </style>
+  <body>
+    <div class="container1">
+      <h1 class="Topic">THE WILDLIFE</h1>
+
+      <nav>
+        <a href="#" class="navbar">Home</a>
+        <a href="#" class="navbar">About Us</a>
+        <a href="#" class="navbar">Link</a>
+        <a href="#" class="navbar">Reach Us</a>
+        <a href="#" class="navbar">Service</a>
+      </nav>
+    </div>
+    <img src="./imgs/ele-1.jpg" alt="" class="mainpic" />
+
+    <div class="container2">
+      <div class="box">
+        <div class="second-body">
+          <div class="short-title">
+            <svg width="10" height="30">
+              <rect
+                width="10"
+                height="40"
+                style="fill: #7a804d; fill-opacity: 1"
+              />
+            </svg>
+            <h4>ADVANTURE LIFE OF ANIMALS</h4>
+          </div>
+
+          <h2 class="long-title">THIS IS HOW THEY SPEND THEIR LIFE</h2>
+          <p class="para">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et
+            inventore temporibus, quasi aliquam praesentium minus repellat
+            itaque doloribus error provident, soluta sapiente dicta eveniet in
+          </p>
+
+          <button class="btn">See More</button>
+        </div>
+      </div>
+
+      <img src="./imgs/body pic-1.jpg" alt="" class="deer" />
+
+      <div class="gallery">
+        <img src="./imgs/body small-1.jpg" alt="" class="pics" />
+        <img src="./imgs/body small-3.jpg" alt="" class="pics" />
+        <img src="./imgs/body small-2.jpg" alt="" class="pics" />
+      </div>
+    </div>
+
+    <div class="text_container">
+      <img src="./imgs/donate-3.jpg" alt="" class="image" />
+      <div class="overlay">
+        <h2 class="text">
+          The dhole is a canid native to Central, South, East, and Southeast
+          Asia. Other English names for the species include Asian wild dog,
+          Asiatic wild dog, Indian wild dog, whistling dog, red dog, and
+          mountain wolf.
+        </h2>
+      </div>
+    </div>
+
+    <div class="d_container">
+      <div class="donation_title">
+        <h2>Donate Us</h2>
+      </div>
+
+      <div class="img_box">
+        <img src="./imgs/donate.jpg" alt="" class="d_img" />
+      </div>
+
+      <div class="img_box">
+        <img src="./imgs/wolf.jpg" alt="" class="d_img" />
+      </div>
+
+      <div class="img_box">
+        <img src="./imgs/snake.jpg" alt="" class="d_img" />
+      </div>
+
+      <div class="img_box">
+        <img src="./imgs/wildcat.jpeg" alt="" class="d_img" />
+      </div>
+    </div>
+    <footer>
+      <div class="foot_container">
+        <h5 style="color: white; font-size: 20px">Email:</h5>
+        <input
+          required
+          class="email"
+          type="email"
+          value=""
+          alt=""
+          placeholder="Type your email"
+        /><button class="sub_btn" type="button" value="button">Submit</button>
+      </div>
+    </footer>
+  </body>
+</html>
